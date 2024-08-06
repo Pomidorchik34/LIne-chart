@@ -2,38 +2,22 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import pub from "./assets/pub.json";
 import { LineChart } from "@mui/x-charts/LineChart";
-
-const data = [
-  15650496, 1565136, 15652224, 15653088, 15653952, 1565568, 15656544, 15657408,
-  15658272,
-];
-const xData = [
-  "0.0152077",
-  "0153183",
-  "0.0152919",
-  "0.0153575",
-  "0.0153234",
-  "0.015304",
-  "0.0152791",
-  "0.0154032",
-  "0.0151321",
-];
-
+const data = [5, 7, 9, 4, 7, 9, 0, 5, 3];
+const xData = [7, 4, 8, 3, 9, 3, 6, 7, 3];
+// fetch(
+//   "https://pub-7be1d45c4a744f86846c80e90df909eb.r2.dev/files/2a2cf2b5-ea1c-473e-8c3b-95d93ae32f73.json"
+// )
+//   .then((res) => res.json())
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+// pub.forEach((value, index) => {
+//   if (index >= 10) {
+//     return;
+//   }
+//   data.push(value.value);
+//   xData.push(value.time % 100000);
+// });
 export default function BasicLineChart() {
-  async function getData(url) {
-    try {
-      const response = await fetch(url);
-      let data = [];
-      if (response.status == 200) {
-        data = await response.json();
-      }
-
-      return data;
-    } catch (err) {
-      console.log(err);
-    }
-  }
-  getData(pub);
   return (
     <>
       <Stack className="line" sx={{ width: "100%" }}>
