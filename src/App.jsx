@@ -2,21 +2,12 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import pub from "./assets/pub.json";
 import { LineChart } from "@mui/x-charts/LineChart";
-const data = [5, 7, 9, 4, 7, 9, 0, 5, 3];
-const xData = [7, 4, 8, 3, 9, 3, 6, 7, 3];
-// fetch(
-//   "https://pub-7be1d45c4a744f86846c80e90df909eb.r2.dev/files/2a2cf2b5-ea1c-473e-8c3b-95d93ae32f73.json"
-// )
-//   .then((res) => res.json())
-//   .then((data) => console.log(data))
-//   .catch((err) => console.log(err));
-// pub.forEach((value, index) => {
-//   if (index >= 10) {
-//     return;
-//   }
-//   data.push(value.value);
-//   xData.push(value.time % 100000);
-// });
+const data = [];
+const xData = [];
+pub.forEach((value, index) => {
+  xData.push(value.time);
+  data.push(value.value);
+});
 export default function BasicLineChart() {
   return (
     <>
